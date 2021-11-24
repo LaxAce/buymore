@@ -536,6 +536,19 @@ input {
   font-weight: 500;
 }
 
+/* =============== Sign-up =============== */
+.signup {
+  padding: 10% 35%;
+}
+
+.email-box,
+.name-box,
+.password-box {
+  width: 110%;
+  display: inline-block;
+  margin-bottom: 3.2rem;
+}
+
 /* =============== Ending Styles =============== */
 .end-effect,
 .end-effect:hover {

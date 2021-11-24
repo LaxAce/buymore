@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ItemDetails from './ItemDetails';
 import Main from './Main';
 import EachDepartment from './EachDepartment';
-// import Sidebar from './Sidebar';
+import Signup from './Signup';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
 
           <Route path="/:id" element={<EachDepartment />} />
 
-          {/* <Route exact path="/sidebar" element={<Sidebar />} /> */}
+          <Route path="/signup" element={<Signup />} />
         </Routes>
 
         <Footer />

@@ -19,7 +19,6 @@ const Navbar = () => {
     const barBox = document.querySelector('.bars-box');
     const closeBar = document.querySelector('.close');
     const closeBarButton = document.querySelectorAll('.btn-close');
-    console.log(closeBarButton);
 
     barBox.addEventListener('click', () => {
       sidebar.classList.remove('hidden');
@@ -50,9 +49,12 @@ const Navbar = () => {
         </div>
 
         <ul className="mini-nav">
-          <li>
-            <p className="sign-in">Sign In</p>
-          </li>
+          <Link to="/signup">
+            {' '}
+            <li>
+              <p className="sign-in">Sign In</p>
+            </li>
+          </Link>
           <li>
             {' '}
             <p className="login">Login</p>
