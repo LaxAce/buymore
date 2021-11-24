@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import useFetch from './UseFetch';
 import { useState, useEffect } from 'react';
 
@@ -60,9 +60,11 @@ const ItemDetails = () => {
             {error && <div className="message">{error} 😫 </div>}
             {itemList &&
               itemList.map(itemOthers => (
-                <div className="image-sm-container" key={itemOthers.id}>
-                  <img src={itemOthers.image} className="image-sm"></img>
-                </div>
+                <Link to={`/details/${itemOthers.id}`} key={itemOthers.id}>
+                  <div className="image-sm-container">
+                    <img src={itemOthers.image} className="image-sm"></img>
+                  </div>
+                </Link>
               ))}
           </div>
         </div>
