@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import useFetch from './UseFetch';
+import useFetch from '../../../utilities/UseFetch';
 import { useState, useEffect } from 'react';
 
 const ItemDetails = () => {

@@ -1,5 +1,5 @@
-import useSlider from './UseSlider';
-import useFetch from './UseFetch';
+import useSlider from '../../../utilities/UseSlider';
+import useFetch from '../../../utilities/UseFetch';
 import { Link } from 'react-router-dom';
 
 const BestSeller = () => {

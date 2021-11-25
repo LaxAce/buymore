@@ -1,4 +1,4 @@
-import heroImg from './img/big-hero2.jpg';
+import heroImg from '../../../img/big-hero2.jpg';
 const Hero = () => {
   return (
     <div className="hero ">

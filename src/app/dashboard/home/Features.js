@@ -1,6 +1,6 @@
-import premium from './img/premium.png';
-import star from './img/star.png';
-import flower from './img/flower.png';
+import premium from '../../../img/premium.png';
+import star from '../../../img/star.png';
+import flower from '../../../img/flower.png';
 
 const Features = () => {
   return (

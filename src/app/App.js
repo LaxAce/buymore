@@ -1,11 +1,11 @@
-import Navbar from './Navbar';
+import Navbar from './dashboard/home/Navbar';
 
-import Footer from './Footer';
+import Footer from './dashboard/home/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ItemDetails from './ItemDetails';
-import Main from './Main';
-import EachDepartment from './EachDepartment';
-import Signup from './Signup';
+import ItemDetails from './dashboard/view/ItemDetails';
+import Main from './dashboard/home/Main';
+import EachDepartment from './dashboard/view/EachDepartment';
+import Signup from './signup/Signup';
 
 function App() {
   return (

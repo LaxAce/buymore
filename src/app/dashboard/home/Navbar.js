@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import cart from './img/cart.svg';
-import searchIcon from './img/search-icon.svg';
+import cart from '../../../img/cart.svg';
+import searchIcon from '../../../img/search-icon.svg';
 const Navbar = () => {
   // window.onload = () => {
   //   const sidebar = document.querySelector('.sidebar');

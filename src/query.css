@@ -1,4 +1,7 @@
 @media only screen and (max-width: 1025px) {
+  .grid-4-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .section {
     padding: 3.2rem 4.8rem;
   }
@@ -20,6 +23,9 @@
 }
 
 @media only screen and (max-width: 815px) {
+  .grid-4-cols {
+    grid-template-columns: 1fr 1fr;
+  }
   .search {
     width: 50%;
   }
@@ -152,6 +158,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .grid-4-cols {
+    grid-template-columns: 1fr;
+  }
   .flex {
     overflow-x: auto;
   }
