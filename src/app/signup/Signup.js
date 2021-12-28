@@ -37,7 +37,7 @@ const Signup = () => {
         localStorage.setItem('authToken', token);
         setLoading(false)
         if (!result.msg) {
-          navigate(-1);
+          navigate('/');
           loggedIn()
         }
         setError(result.msg);
