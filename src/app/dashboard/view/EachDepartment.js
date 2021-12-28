@@ -1,6 +1,6 @@
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import useFetch from '../../../utilities/UseFetch';
+import useFetch from '../../../providers/utilities/UseFetch';
 
 const EachDepartment = () => {
   const { id } = useParams();

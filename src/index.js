@@ -6,10 +6,14 @@ import './main.css';
 import './query.css';
 
 import App from './app/App';
+import { Provider } from 'react-redux';
+import store from './providers/store/index'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

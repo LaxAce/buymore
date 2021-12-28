@@ -20,6 +20,12 @@
   .footer {
     padding-bottom: 6.4rem;
   }
+
+   /* CREATE ACCOUNT */
+   .signup-page,
+   .login-page {
+    padding: 10%;
+  }
 }
 
 @media only screen and (max-width: 815px) {
@@ -91,6 +97,12 @@
     display: flex;
     gap: 2.4rem;
   }
+
+   /* CREATE ACCOUNT */
+   .signup-page,
+   .login-page {
+    padding: 10%;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -155,6 +167,19 @@
   .details-flex .extra-margin-top {
     margin-top: 0;
   }
+
+  /* CREATE ACCOUNT */
+  .signup-page,
+  .login-page {
+    padding: 1.8rem 1.6rem 4.8rem 1.6rem;
+  }
+
+  .input-field {
+    padding: 2.8rem;
+    padding-left: 1.2rem;
+    font-size: 1.8rem;
+  }
+  
 }
 
 @media only screen and (max-width: 600px) {
@@ -184,7 +209,7 @@
   }
 
   .bars {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
 
   .close {
@@ -207,6 +232,9 @@
   .sidebar {
     padding: 5% 5%;
     font-size: 2.6rem;
+    background-color: rgba(225, 225, 225, 0.9);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
 
   .inner-head {
@@ -219,24 +247,33 @@
     margin-bottom: 3.2rem;
   }
 
-  .sidebar-login {
+  .sidebar-login, 
+  .sidebar-signup {
     background-color: hsl(26, 100%, 55%);
     width: 98%;
     height: 8%;
-    display: flex;
-    justify-content: center;
     padding-top: 6px;
     border-radius: 6px;
     transition: border-radius 0.3s;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .sidebar-login {
+    background-color: #fff;
+    color: hsl(26, 100%, 55%);
+    border: 2px solid hsl(26, 100%, 55%);
   }
 
   .sidebar-login:hover,
-  .sidebar-login:visited {
+  .sidebar-login:visited,
+  .sidebar-signup:hover,
+  .sidebar-signup:visited {
     border-radius: 3.2rem;
   }
-  .side-login {
+  .side-login,
+  .side-signup {
     font-size: 2.4rem;
-    /* font-weight: 700; */
     display: inline-block;
     padding-top: 1.4rem;
   }

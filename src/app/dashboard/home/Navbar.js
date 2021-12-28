@@ -1,18 +1,21 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 import { FaBars } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import cart from '../../../img/cart.svg';
 import searchIcon from '../../../img/search-icon.svg';
-const Navbar = () => {
-  // window.onload = () => {
-  //   const sidebar = document.querySelector('.sidebar');
-  //   const barBox = document.querySelector('.bars-box');
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-  //   barBox.addEventListener('click', () => {
-  //     sidebar.classList.remove('hidden');
-  //   });
-  // };
+// Action
+import {action} from '../../../providers/store/actions/actionIndex';
+
+const Navbar = () => {
+  const navigate = useNavigate()
+  const loginState = useSelector(s => s.loggedIn.isLoggedIn);
+  const dispatch = useDispatch();
+  const {loggedIn} = bindActionCreators(action, dispatch);
 
   useEffect(() => {
     const sidebar = document.querySelector('.sidebar');
@@ -35,6 +38,16 @@ const Navbar = () => {
     });
   });
 
+   useEffect(() => {
+    if (localStorage.getItem('authToken') == null)  loggedIn();
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    loggedIn();
+    navigate('/')
+  };
+
   return (
     <div className="navbar">
       <header className="container main-nav">
@@ -49,21 +62,31 @@ const Navbar = () => {
         </div>
 
         <ul className="mini-nav">
-          <Link to="/signup">
-            {' '}
+          {loginState || (<Link to="/signup">
             <li>
-              <p className="sign-in">Sign In</p>
+              <p className="sign-in">Signup</p>
+            </li>
+          </Link>)
+          }
+          {!loginState ? (
+            <Link to="/login">
+              <li>
+                {' '}
+                <p className="login">Login</p>
+              </li>
+            </Link>
+          ) : (
+            <li onClick={handleLogout}>
+              <p className="login">Logout</p>
+            </li>
+          )}
+          <Link to="/cart">
+            <li>
+              <div className="cart">
+                <img src={cart} alt="cart icon" />
+              </div>
             </li>
           </Link>
-          <li>
-            {' '}
-            <p className="login">Login</p>
-          </li>
-          <li>
-            <div className="cart">
-              <img src={cart} alt="cart icon" />
-            </div>
-          </li>
         </ul>
       </header>
       <nav className="small-nav">
@@ -99,11 +122,17 @@ const Navbar = () => {
         <a href="#best-seller" className="btn-close">
           Our Best Seller
         </a>
-        <div className="sidebar-login">
-          <Link to="/login" className="side-login btn-close">
+        {!loginState ?
+          <Link to="/login" className="sidebar-login side-login btn-close">
             Login
-          </Link>
+          </Link> :
+        <div className="sidebar-login side-login btn-close" onClick={handleLogout}>
+          Logout
         </div>
+        }
+        {loginState || <Link to="/signup" className="sidebar-signup side-signup btn-close">
+            Signup
+          </Link>}
       </nav>
     </div>
   );

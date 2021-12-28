@@ -1,5 +1,5 @@
-import useSlider from '../../../utilities/UseSlider';
-import useFetch from '../../../utilities/UseFetch';
+import useSlider from '../../../providers/utilities/UseSlider';
+import useFetch from '../../../providers/utilities/UseFetch';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
